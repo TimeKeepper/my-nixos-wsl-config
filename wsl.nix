@@ -44,6 +44,7 @@
   home-manager.users.${username} = {
     imports = [
       ./home.nix
+      # ./nix-ld-config.nix
     ];
   };
 

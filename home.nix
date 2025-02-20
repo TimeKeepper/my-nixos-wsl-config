@@ -173,9 +173,9 @@ in {
       # FIXME: run 'scoop install win32yank' on Windows, then add this line with your Windows username to the bottom of interactiveShellInit
       # fish_add_path --append /mnt/c/Users/27843/scoop/apps/win32yank/0.1.1
       interactiveShellInit = ''
-        ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
+               ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
 
-        ${pkgs.lib.strings.fileContents (pkgs.fetchFromGitHub {
+               ${pkgs.lib.strings.fileContents (pkgs.fetchFromGitHub {
             owner = "rebelot";
             repo = "kanagawa.nvim";
             rev = "de7fb5f5de25ab45ec6039e33c80aeecc891dd92";
@@ -183,9 +183,9 @@ in {
           }
           + "/extras/kanagawa.fish")}
 
-        set -U fish_greeting
+               set -U fish_greeting
 
-	sudo nixos-rebuild switch --flake ~/configuration
+        sudo nixos-rebuild switch --flake ~/configuration
       '';
       functions = {
         refresh = "source $HOME/.config/fish/config.fish";
@@ -232,10 +232,10 @@ in {
         pbcopy = "/mnt/c/Windows/System32/clip.exe";
         pbpaste = "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -command 'Get-Clipboard'";
         explorer = "/mnt/c/Windows/explorer.exe";
-        
-        # To use code as the command, uncomment the line below. Be sure to replace [my-user] with your username. 
+
+        # To use code as the command, uncomment the line below. Be sure to replace [my-user] with your username.
         # If your code binary is located elsewhere, adjust the path as needed.
-        # code = "/mnt/c/Users/[my-user]/AppData/Local/Programs/'Microsoft VS Code'/bin/code";
+        # code = "/mnt/c/Users/27843/AppData/Local/Programs/'Microsoft VS Code'/bin/code";
       };
       plugins = [
         {
