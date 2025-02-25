@@ -86,6 +86,7 @@
         modules = [
           nixos-wsl.nixosModules.wsl
           ./wsl.nix
+          ./nix-ld-config.nix
         ];
       };
     };

@@ -8,19 +8,16 @@
 }: let
   unstable-packages = with pkgs.unstable; [
     # FIXME: select your core binaries that you always want on the bleeding-edge
-    bat
     bottom
+    yazi
     coreutils
     curl
     du-dust
-    fd
     findutils
     fx
     git
     git-crypt
     lazygit
-    htop
-    jq
     killall
     mosh
     procs
