@@ -195,6 +195,14 @@ in {
             set -gx $arr[1] $arr[2]
           end
         '';
+        yy = ''
+          set tmp (mktemp -t "yazi-cwd.XXXXXX")
+          yazi $argv --cwd-file="$tmp"
+          if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+              builtin cd -- "$cwd"
+          end
+          rm -f -- "$tmp"
+        '';
       };
       shellAbbrs =
         {
@@ -224,6 +232,7 @@ in {
           gsl = "git stash list";
         };
       shellAliases = {
+        c = "clear";
         jvim = "nvim";
         lvim = "nvim";
         pbcopy = "/mnt/c/Windows/System32/clip.exe";
